@@ -1,4 +1,4 @@
-package switch_case;
+package Patterns;
 
 public class Vowels {
 

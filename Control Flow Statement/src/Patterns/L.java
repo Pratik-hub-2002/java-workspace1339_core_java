@@ -1,4 +1,4 @@
-package switch_case;
+package Patterns;
 
 public class L {
 
@@ -63,11 +63,11 @@ public class L {
 
 			for (int j = 1; j <= 5; j++) {
 
-				System.out.print(""); // *
-										// **
-										// ***
-										// ****
-										// *****
+				System.out.print(""); //   *
+										// * *
+										// * * *
+										// * * * *
+										// * * * * *
 			}
 
 			for (int k = 1; k <= i; k++) {
