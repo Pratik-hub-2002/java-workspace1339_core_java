@@ -56,12 +56,14 @@ public class MainClass2 {
 //		Calculator c = new Calculator();
 //		c.cal(choice, a, b);
 
-		// 6th Cube
-		System.out.println("Enter any number to find a cube = ");
-		int num4 = sc.nextInt();
-
-		int cuberesult = mp.cube(num4);
-		System.out.println("\nCube of " + num4 + " = " + cuberesult);
+//		// 6th Cube
+//		System.out.println("Enter any number to find a cube = ");
+//		int num4 = sc.nextInt();
+//
+//		int cuberesult = mp.cube(num4);
+//		System.out.println("\nCube of " + num4 + " = " + cuberesult);
+		
+		// 7th
 
 		sc.close();
 
