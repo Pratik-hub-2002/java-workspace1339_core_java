@@ -25,9 +25,12 @@ public class Shpp_Disc {
 		System.out.println("Enter Bill Amount");
 		double bill_amt = sc.nextDouble();
 
-		System.out.println("If Member Yes/No");
-		String member = sc.next();
+		String member = "No";
 
+		if (bill_amt > 1000) {
+			System.out.println("If Member Yes/No");
+			member = sc.next();
+		}
 		Shpp_Disc sh = new Shpp_Disc();
 		double final_bill = sh.bill(bill_amt, member);
 
