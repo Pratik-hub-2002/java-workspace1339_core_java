@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Month {
 
-	public void month(int num) {
+	public void month(int choice) {
 
-		switch (num) {
+		switch (choice) {
 
 		case 1:
 			System.out.println("January");
@@ -55,10 +55,10 @@ public class Month {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("Enter number from 1 to 12 = ");
-		int num = sc.nextInt();
+		int choice = sc.nextInt();
 
 		Month m = new Month();
-		m.month(num);
+		m.month(choice);
 
 		sc.close();
 
