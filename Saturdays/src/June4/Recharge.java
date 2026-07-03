@@ -16,16 +16,14 @@ public class Recharge {
 
 			case 1:
 				System.out.println("Data Packs");
-//			System.out.println("1. 1GB - Rs.19");
 				price = 19;
 				break;
 			case 2:
-//			System.out.println("2. 3GB - Rs.39");
 				price = 39;
 				break;
 			case 3:
-//			System.out.println("3. 7GB - Rs.49");
 				price = 49;
+				break;
 			default:
 				System.out.println("Invalid Choice");
 			}
@@ -35,16 +33,14 @@ public class Recharge {
 			switch (pack) {
 			case 1:
 				System.out.println("Talktime");
-//				System.out.println("1. Rs.10");
 				price = 10;
 				break;
 			case 2:
-//				System.out.println("1. Rs.30");
 				price = 30;
 				break;
 			case 3:
-//				System.out.println("1. Rs.50");
 				price = 40;
+				break;
 			default:
 				System.out.println("Invalid Choice");
 			}
@@ -54,16 +50,14 @@ public class Recharge {
 			switch (pack) {
 			case 1:
 				System.out.println("Combo Pack");
-//				System.out.println("1. 28 Days - ₹199");
 				price = 199;
 				break;
 			case 2:
-//				System.out.println("2. 56 Days - ₹399");
 				price = 399;
 				break;
 			case 3:
-//				System.out.println("3. 84 Days - ₹599");
 				price = 599;
+				break;
 			default:
 				System.out.println("Invalid Choice");
 			}
@@ -77,7 +71,7 @@ public class Recharge {
 			System.out.println("Recharge Amount = ₹" + price);
 			System.out.println(" SGST = " + "Rs. " + (price * sgst));
 			System.out.println(" CGST = " + "Rs. " + (price * cgst));
-			System.out.println("Total Amount = ₹ " + final_amt);
+			System.out.println("Total Amount = ₹ " + String.format("%.2f", final_amt));
 		}
 	}
 
