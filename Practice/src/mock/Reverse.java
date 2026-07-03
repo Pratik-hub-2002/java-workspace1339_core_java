@@ -4,33 +4,27 @@ import java.util.Scanner;
 
 public class Reverse {
 
-	public void reverse(int num1, int num2, int num3, int num4) {
+	public void reverse(int num) {
 
-		int[] numbers = { num1, num2, num3, num4 };
+		int rem, rev = 0;
 
-		for (int i = numbers.length-1; i >= 0; i--) {
-			System.out.println(numbers[i]);
-		}
+		do {
+			rem = num % 10;
+			rev = rev * 10 + rem;
+			num = num / 10;
+		} while (num != 0);
+		System.out.println("Reversed Number = " + rev);
 	}
 
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Enter 1st number = ");
-		int num1 = sc.nextInt();
-
-		System.out.println("Enter 2nd number = ");
-		int num2 = sc.nextInt();
-
-		System.out.println("Enter 3rd number = ");
-		int num3 = sc.nextInt();
-
-		System.out.println("Enter 4th number = ");
-		int num4 = sc.nextInt();
+		System.out.println("Enter a number = ");
+		int num = sc.nextInt();
 
 		Reverse r = new Reverse();
-		r.reverse(num1, num2, num3, num4);
+		r.reverse(num);
 
 		sc.close();
 

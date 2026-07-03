@@ -17,11 +17,22 @@ public class Prime {
 					break;
 				}
 			}
+
+//			int i = 2;
+//
+//			while (i < num) {
+//				if (num % i == 0) {
+//					isPrime = false;
+//					break;
+//				}
+//				i++;
+//			}
 		}
+
 		if (isPrime) {
-			System.out.println(num + " is Prime");
+			System.out.println(num + " is Prime number");
 		} else {
-			System.out.println(num + " is not Prime");
+			System.out.println(num + " is not Prime number");
 		}
 	}
 
