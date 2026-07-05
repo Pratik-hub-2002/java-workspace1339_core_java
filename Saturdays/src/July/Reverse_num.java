@@ -22,6 +22,7 @@ public class Reverse_num {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
+		Reverse_num rn = new Reverse_num();
 
 		while (true) {
 			System.out.println("Enter number to reverse = ");
@@ -30,7 +31,7 @@ public class Reverse_num {
 			if (num == 0) {
 				break;
 			}
-			Reverse_num rn = new Reverse_num();
+
 			rn.reverse_num(num);
 		}
 

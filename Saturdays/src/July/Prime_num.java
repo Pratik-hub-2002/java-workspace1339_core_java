@@ -28,6 +28,7 @@ public class Prime_num {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
+		Prime_num p = new Prime_num();
 
 		while (true) {
 			System.out.println("\nEnter any number to check if prime or not = ");
@@ -37,7 +38,6 @@ public class Prime_num {
 				break;
 			}
 
-			Prime_num p = new Prime_num();
 			p.prime(num);
 		}
 

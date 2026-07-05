@@ -32,6 +32,7 @@ public class Prime_num_loop {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
+		Prime_num_loop p = new Prime_num_loop();
 
 		while (true) {
 
@@ -44,7 +45,7 @@ public class Prime_num_loop {
 			if (num == 0) {
 				break;
 			}
-			Prime_num_loop p = new Prime_num_loop();
+
 			p.prime(num, num2);
 		}
 
