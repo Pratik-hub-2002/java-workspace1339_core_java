@@ -1,3 +1,5 @@
+package CFS_practice.src;
+
 import java.util.*;
 
 public class Days {

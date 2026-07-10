@@ -627,10 +627,8 @@ public class A {
 //			System.out.println(i);
 //			i -= 2;
 //		}
-
 //		1 to 501
 //		int i = 1;
-//
 //		while (i <= 501) {
 //			System.out.println(i);
 //			i += 2;

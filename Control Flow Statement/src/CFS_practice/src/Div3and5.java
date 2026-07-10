@@ -1,3 +1,4 @@
+package CFS_practice.src;
 import java.util.*;
 
 public class Div3and5 {
