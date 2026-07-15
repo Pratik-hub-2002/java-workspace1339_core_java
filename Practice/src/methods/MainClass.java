@@ -293,50 +293,171 @@ public class MainClass {
 			case 11:
 				Online_Voting_System ovs = new Online_Voting_System();
 
+				System.out.println("Enter your age: ");
+				int age = sc.nextInt();
+
+				boolean eligible = ovs.vote(age);
+
+				if (eligible) {
+					System.out.println("Can Vote!");
+				} else {
+					System.out.println("Cannot Vote!");
+				}
+
 				break;
 
 			case 12:
 				Ride_Booking_App rba = new Ride_Booking_App();
 
+				System.out.println("Enter the distance travelled in km: ");
+				double distance = sc.nextDouble();
+
+				double fare = rba.calculateFare(distance);
+
+				System.out.println("Total Fare = ₹" + fare);
 				break;
 
 			case 13:
 				Password_Strength_Checker psc = new Password_Strength_Checker();
+
+				sc.nextLine();
+
+				System.out.println("Password length should be of 8 characters in @");
+				System.out.println("Enter Password: ");
+				String check_password = sc.nextLine();
+
+				String pass_result = psc.checkPassword(check_password);
+
+				System.out.println(pass_result);
 
 				break;
 
 			case 14:
 				Library_System lss = new Library_System();
 
+				sc.nextLine();
+
+				System.out.println("Enter the name of the book: ");
+				String bookName = sc.nextLine();
+
+				System.out.println("Is Book Available? true/false");
+				boolean isAvailable = sc.nextBoolean();
+
+				lss.issueBook(bookName, isAvailable);
+
 				break;
 
 			case 15:
 				Shopping_Cart_Total sct = new Shopping_Cart_Total();
+
+				sc.nextLine();
+
+				System.out.println("Enter Grocery Item 1:");
+				String item1 = sc.nextLine();
+				System.out.println("Enter Price:");
+				double price1 = sc.nextDouble();
+
+				sc.nextLine();
+
+				System.out.println("Enter Grocery Item 2:");
+				String item2 = sc.nextLine();
+				System.out.println("Enter Price:");
+				double price2 = sc.nextDouble();
+
+				sc.nextLine();
+
+				System.out.println("Enter Grocery Item 3:");
+				String item3 = sc.nextLine();
+				System.out.println("Enter Price:");
+				double price3 = sc.nextDouble();
+
+				double final_amt = sct.calculateTotal(price1, price2, price3);
+
+				System.out.println("\n===== SHOPPING CART =====");
+				System.out.println(item1 + " = ₹" + price1);
+				System.out.println(item2 + " = ₹" + price2);
+				System.out.println(item3 + " = ₹" + price3);
+				System.out.println("-------------------------");
+				System.out.println("Gross Amount = ₹" + final_amt);
 
 				break;
 
 			case 16:
 				Find_Maximum_Number fmn = new Find_Maximum_Number();
 
+				System.out.println("Enter the first number: ");
+				int first_number = sc.nextInt();
+
+				System.out.println("Enter the second number: ");
+				int second_number = sc.nextInt();
+
+				System.out.println("Enter the third number: ");
+				int third_number = sc.nextInt();
+
+				int max = fmn.findMax(first_number, second_number, third_number);
+				System.out.println("Maximum number: " + max);
+
 				break;
 
 			case 17:
 				Prime_Number_Checker pnc = new Prime_Number_Checker();
+
+				System.out.println("Enter any number: ");
+				int prime_num = sc.nextInt();
+
+				boolean prime_result = pnc.isPrime(prime_num);
+
+				System.out.println(prime_result);
 
 				break;
 
 			case 18:
 				Palindrome_Checker pc = new Palindrome_Checker();
 
+				System.out.println("Enter any number: ");
+				int palin_num = sc.nextInt();
+
+				boolean pali_result = pc.isPalindrome(palin_num);
+
+				if (pali_result) {
+					System.out.println(palin_num + " is a palindrone number.");
+				} else {
+					System.out.println(palin_num + " is not a palindrone number.");
+				}
+
 				break;
 
 			case 19:
 				Even_Odd_Counter evo = new Even_Odd_Counter();
 
+				System.out.println("How many numbers do you want to enter?");
+				int size = sc.nextInt();
+
+				int arr[] = new int[size];
+
+				System.out.println("Enter " + size + " numbers:");
+
+				for (int i = 0; i < arr.length; i++) {
+
+					arr[i] = sc.nextInt();
+				}
+
+				evo.countEvenOdd(arr);
+
 				break;
 
 			case 20:
 				Grade_Calculator gc = new Grade_Calculator();
+
+				System.out.println("Enter your marks: ");
+				int marks = sc.nextInt();
+
+				if (marks < 0 || marks > 100) {
+					System.out.println("Invalid Marks");
+				} else {
+					char grade = gc.getGrade(marks);
+					System.out.println(grade);
+				}
 
 				break;
 
