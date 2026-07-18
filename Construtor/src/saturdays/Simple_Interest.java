@@ -15,6 +15,6 @@ public class Simple_Interest {
 
 	public double simple_interest() {
 
-		return principal * interest * tenure;
+		return (principal * interest * tenure) / 100;
 	}
 }
