@@ -13,7 +13,7 @@ public class MainClass {
 		char ch;
 		do {
 
-			System.out.println("========Menu========");
+			System.err.println("========Menu========");
 			System.out.println("1. Student");
 			System.out.println("2. Rectangle Area");
 			System.out.println("3. Employee Salary");
@@ -40,6 +40,7 @@ public class MainClass {
 			switch (choice) {
 
 			case 1:
+				System.err.println("=========Student Info===========");
 				sc.nextLine();
 				System.out.println("Enter your name: ");
 				String name = sc.nextLine();
@@ -56,6 +57,7 @@ public class MainClass {
 				break;
 
 			case 2:
+				System.err.println("===============Rectangle Area============");
 				System.out.println("Enter lenght: ");
 				int length = sc.nextInt();
 
@@ -70,6 +72,7 @@ public class MainClass {
 				break;
 
 			case 3:
+				System.err.println("============Employee Salary=============");
 				sc.nextLine();
 				System.out.println("Enter the name of the employee: ");
 				String ename = sc.nextLine();
@@ -87,6 +90,7 @@ public class MainClass {
 				break;
 
 			case 4:
+				System.err.println("===============Circle Operations================");
 				System.out.println("Enter the radius: ");
 				double radius = sc.nextDouble();
 
@@ -100,7 +104,7 @@ public class MainClass {
 				break;
 
 			case 5:
-				System.err.println("Simple Interest");
+				System.err.println("============Simple Interest=============");
 				System.out.println("Enter the principal amount: ");
 				double principal = sc.nextDouble();
 
@@ -236,7 +240,7 @@ public class MainClass {
 				break;
 
 			case 11:
-				System.err.println("Number Reverse");
+				System.err.println("==============Number Reverse================");
 
 				System.out.println("Enter any number: ");
 				int rnum = sc.nextInt();
@@ -248,7 +252,7 @@ public class MainClass {
 				break;
 
 			case 12:
-				System.err.println("Palindrome Check");
+				System.err.println("=================Palindrome Check===============");
 
 				System.out.println("Enter any number: ");
 				int pnum = sc.nextInt();
@@ -264,21 +268,173 @@ public class MainClass {
 				break;
 
 			case 13:
+				System.err.println("==============Power Calculation==============");
+
+				System.out.println("Enter base value: ");
+				int base = sc.nextInt();
+
+				System.out.println("Enter exponent value: ");
+				int exponent = sc.nextInt();
+
+				Power_Calculation powerc = new Power_Calculation(base, exponent);
+
+				System.out.println(base + "^" + exponent + " = " + powerc.calculate_power());
+
 				break;
+
 			case 14:
+				System.err.println("=================Max of Three Numbers============");
+
+				System.out.println("Enter first number:");
+				int first_num = sc.nextInt();
+
+				System.out.println("Enter second number:");
+				int second_num = sc.nextInt();
+
+				System.out.println("Enter third number:");
+				int third_num = sc.nextInt();
+
+				Max_of_Three_Numbers mtn = new Max_of_Three_Numbers(first_num, second_num, third_num);
+
+				System.out.println(first_num + ", " + second_num + ", " + third_num + " = " + mtn.maxofThreeNumbers()
+						+ " is largest number");
+
 				break;
+
 			case 15:
+				System.err.println("=================ATM Machine Simulation=================");
+
+				System.out.println("Enter account number: ");
+				long account_number = sc.nextLong();
+
+				ATM_simulation as = new ATM_simulation(account_number);
+
+				System.out.println("==============Select Operation=============");
+				System.out.println("1. Deposit");
+				System.out.println("2. Withdraw");
+				System.out.println("3. Check Balance");
+				System.out.print("Enter your choice: ");
+				int atmChoice = sc.nextInt();
+
+				switch (atmChoice) {
+
+				case 1:
+					System.err.println("==============Deposit=============");
+					System.out.print("Enter Deposit Amount: ");
+					double deposit = sc.nextDouble();
+
+					System.out.println("Updated Balance: " + as.deposit(deposit));
+
+					break;
+
+				case 2:
+					System.out.print("Enter Withdrawal Amount: ");
+					double withdraw = sc.nextDouble();
+
+					System.out.println("Updated Balance: %.2f%n" + as.withdraw(withdraw));
+
+					break;
+
+				case 3:
+					System.out.println("Current Balance: %.2f%n" + as.balance);
+
+					break;
+
+				default:
+
+					System.out.println("Invalid Choice!");
+				}
+
+				System.err.println("Account Number : " + as.accountNumber);
+				System.err.println("Current Balance: " + as.check_balance());
+
 				break;
+
 			case 16:
+				System.err.println("==================Shopping Cart===================");
+
+				System.out.println("Enter the quantity: Oty. ");
+				int quantity = sc.nextInt();
+
+				System.out.println("Enter the price: Rs. ");
+				double pprice = sc.nextDouble();
+
+				Shopping_Cart scart = new Shopping_Cart(quantity, pprice);
+
+				System.out.println("Quantity : " + quantity);
+				System.out.println("Price per Item : Rs. " + pprice);
+				System.out.println("Total Price : Rs. " + (quantity * pprice));
+				System.out.println("Discount : Rs. " + scart.discountAmount());
+				System.out.println("Final Bill : Rs. " + scart.calBill());
+
 				break;
+
 			case 17:
+				System.err.println("====================Electricity Bill===================");
+				System.out.print("Enter Units Consumed: ");
+				int units = sc.nextInt();
+
+				Electricity_Bill eb = new Electricity_Bill(units);
+
+				System.out.println("Units Consumed : " + units);
+				System.out.println("Total Bill     : Rs. " + eb.calculateBill());
+
 				break;
+
 			case 18:
+				System.err.println("=====================Fibonacci Series======================");
+				System.out.print("Enter number of terms: ");
+				int terms = sc.nextInt();
+
+				Fibonacci_Series fs = new Fibonacci_Series(terms);
+
+				System.err.println("Fibonacci Series: ");
+				fs.fibonacciSeries();
+
 				break;
+
 			case 19:
+				System.err.println("=================Prime Number Check======================");
+
+				System.out.println("Enter number to check prime or not: ");
+				int cprime = sc.nextInt();
+
+				Check_prime cp = new Check_prime(cprime);
+				cp.checkPrime();
+
 				break;
+
 			case 20:
+				System.err.println("=========================Library System===================");
+				sc.nextLine();
+
+				System.out.print("Enter Book Name: ");
+				String bookName = sc.nextLine();
+
+				System.out.println("Book Status");
+				System.out.println("1. Issue Book");
+				System.out.println("2. Return Book");
+				System.out.print("Enter your choice: ");
+				int libraryChoice = sc.nextInt();
+
+				Library_System ls = new Library_System(bookName, false);
+
+				switch (libraryChoice) {
+
+				case 1:
+					ls.issueBook();
+					break;
+
+				case 2:
+					ls.returnBook();
+					break;
+
+				default:
+					System.out.println("Invalid Choice!");
+				}
+
 				break;
+
 			case 21:
 				System.out.println("Thank You!");
 				sc.close();
