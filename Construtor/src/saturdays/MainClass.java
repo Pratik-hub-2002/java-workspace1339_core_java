@@ -238,6 +238,47 @@ public class MainClass {
 			case 11:
 				System.err.println("Number Reverse");
 
+				System.out.println("Enter any number: ");
+				int rnum = sc.nextInt();
+
+				Number_Reverse nr = new Number_Reverse(rnum);
+
+				System.out.println("Reverse Number : " + nr.makeReverse());
+
+				break;
+
+			case 12:
+				System.err.println("Palindrome Check");
+
+				System.out.println("Enter any number: ");
+				int pnum = sc.nextInt();
+
+				Palindrome_Check pc = new Palindrome_Check(pnum);
+
+				if (pc.check_Palindrome()) {
+					System.out.println(pnum + " is a Palindrome Number");
+				} else {
+					System.out.println(pnum + " is Not a Palindrome Number");
+				}
+
+				break;
+
+			case 13:
+				break;
+			case 14:
+				break;
+			case 15:
+				break;
+			case 16:
+				break;
+			case 17:
+				break;
+			case 18:
+				break;
+			case 19:
+				break;
+			case 20:
+				break;
 			case 21:
 				System.out.println("Thank You!");
 				sc.close();
