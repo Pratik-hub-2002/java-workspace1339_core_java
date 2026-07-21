@@ -21,17 +21,16 @@ public class MainClass {
 			System.out.println("7. Instagram Account");
 			System.out.println("8. Product Details");
 			System.out.println("9. Student Result");
-			System.out.println("10. ");
-			System.out.println("11. ");
-			System.out.println("12. ");
-			System.out.println("13. ");
-			System.out.println();
-			System.out.println();
-			System.out.println();
-			System.out.println();
-			System.out.println();
-			System.out.println();
-			System.out.println("23. Exit");
+			System.out.println("10. Electricity Bill");
+			System.out.println("11. ATM Machine");
+			System.out.println("12. Hospital Patient");
+			System.out.println("13. Library Management");
+			System.out.println("14 Login System");
+			System.out.println("15 Amazon Product");
+			System.out.println("16 Employee Bonus System");
+			System.out.println("17 Hotel Room Booking");
+			System.out.println("18 Flight Reservation System");
+			System.out.println("19. Exit");
 			System.out.println("================================");
 			System.out.print("Enter Your Choice : ");
 			int choice = sc.nextInt();
@@ -265,8 +264,199 @@ public class MainClass {
 				break;
 
 			case 10:
+				System.out.println("=========== Electricity Bill ===========");
 
-			case 23:
+				System.out.print("Enter Customer ID : ");
+				int cid = sc.nextInt();
+				sc.nextLine();
+				System.out.print("Enter Customer Name : ");
+				String cname = sc.nextLine();
+				System.out.print("Enter Units Consumed : ");
+				double units = sc.nextDouble();
+				System.out.print("Enter Rate Per Unit : ");
+				double uprice = sc.nextDouble();
+
+				Electricity_Bill eb = new Electricity_Bill(cid, cname, units, uprice);
+
+				System.out.println("\n=========== Bill Details ===========");
+
+				System.out.println("Customer ID : " + eb.getId());
+				System.out.println("Customer Name : " + eb.getName());
+				System.out.println("Units Consumed : " + eb.getUnits());
+				System.out.println("Rate Per Unit : Rs." + eb.getPrice());
+				System.out.printf("Total Bill : Rs. %.2f%n", eb.totalBill());
+
+				System.out.println("=====================================");
+				break;
+
+			case 11:
+				System.out.println("=========== ATM Machine ===========");
+
+				System.out.print("Enter Account Number : ");
+				int custAccountNum = sc.nextInt();
+				sc.nextLine();
+				System.out.print("Enter Account Holder Name : ");
+				String bankcustName = sc.nextLine();
+				System.out.print("Enter Initial Balance : ");
+				double iniBalAmt = sc.nextDouble();
+
+				ATM_Machine am = new ATM_Machine(custAccountNum, bankcustName, iniBalAmt);
+
+				System.out.print("Enter Deposit Amount : ");
+				double depositAmt = sc.nextDouble();
+				am.deposit(depositAmt);
+
+				System.out.print("Enter Withdraw Amount : ");
+				double withdrawAmt = sc.nextDouble();
+				am.withdraw(withdrawAmt);
+
+				System.out.println("\n=========== Account Details ===========");
+
+				System.out.println("Account Number : " + am.getCustAccountNum());
+				System.out.println("Account Holder : " + am.getBankcustName());
+				System.out.println("Current Balance : " + am.getIniBalAmt());
+
+				System.out.println("=======================================");
+				break;
+
+			case 12:
+				System.out.println("=========== Hospital Patient ===========");
+
+				System.out.print("Enter Patient ID : ");
+				int hpid = sc.nextInt();
+				sc.nextLine();
+
+				System.out.print("Enter Patient Name : ");
+				String hpname = sc.nextLine();
+				sc.nextLine();
+
+				System.out.print("Enter Age : ");
+				int hpage = sc.nextInt();
+
+				System.out.print("Enter Disease : ");
+				String hpdisease = sc.nextLine();
+
+				System.out.print("Enter Doctor Fees : ");
+				double hpfees = sc.nextDouble();
+
+				Hospital_Patient hp = new Hospital_Patient(hpid, hpname, hpage, hpdisease, hpfees);
+
+				System.out.println("\n=========== Patient Details ===========");
+
+				System.out.println("Patient ID : " + hp.getHpid());
+				System.out.println("Patient Name : " + hp.getHpname());
+				System.out.println("Age : " + hp.getHpage());
+				System.out.println("Disease : " + hp.getHpdisease());
+				System.out.println("Doctor Fees : " + hp.getHpfees());
+
+				System.out.println("========================================");
+				break;
+
+			case 13:
+				System.out.println("=========== Library Management ===========");
+
+				System.out.print("Enter Book ID : ");
+				System.out.print("Enter Book Name : ");
+				System.out.print("Enter Author Name : ");
+
+				System.out.println("\n=========== Library Details ===========");
+
+				System.out.println("Book ID : ");
+				System.out.println("Book Name : ");
+				System.out.println("Author Name : ");
+				System.out.println("Book Status : ");
+
+				System.out.println("==========================================");
+				break;
+
+			case 14:
+				System.out.println("=========== Login System ===========");
+
+				System.out.print("Enter Email : ");
+				System.out.print("Enter Password : ");
+
+				System.out.println("\n=========== Login Details ===========");
+
+				System.out.println("Email : ");
+				System.out.println("Password : ");
+				System.out.println("Login Status : ");
+
+				System.out.println("====================================");
+				break;
+
+			case 15:
+				System.out.println("=========== Amazon Product ===========");
+
+				System.out.print("Enter Product ID : ");
+				System.out.print("Enter Product Name : ");
+				System.out.print("Enter Stock Quantity : ");
+				System.out.print("Enter Price : ");
+
+				System.out.print("Enter Quantity to Buy : ");
+
+				System.out.println("\n=========== Product Details ===========");
+
+				System.out.println("Product ID : ");
+				System.out.println("Product Name : ");
+				System.out.println("Price : ");
+				System.out.println("Available Stock : ");
+				System.out.println("Remaining Stock : ");
+
+				System.out.println("=======================================");
+				break;
+
+			case 16:
+				System.out.println("=========== Employee Bonus ===========");
+
+				System.out.print("Enter Employee ID : ");
+				System.out.print("Enter Employee Name : ");
+				System.out.print("Enter Salary : ");
+				System.out.print("Enter Bonus Percentage : ");
+
+				System.out.println("\n=========== Employee Details ===========");
+
+				System.out.println("Employee ID : ");
+				System.out.println("Employee Name : ");
+				System.out.println("Salary : ");
+				System.out.println("Bonus : ");
+				System.out.println("Total Salary : ");
+
+				System.out.println("=======================================");
+				break;
+
+			case 17:
+				System.out.println("=========== Hotel Room Booking ===========");
+
+				System.out.print("Enter Room Number : ");
+				System.out.print("Enter Customer Name : ");
+
+				System.out.println("\n=========== Booking Details ===========");
+
+				System.out.println("Room Number : ");
+				System.out.println("Customer Name : ");
+				System.out.println("Booking Status : ");
+
+				System.out.println("=========================================");
+				break;
+
+			case 18:
+				System.out.println("=========== Flight Reservation ===========");
+
+				System.out.print("Enter Flight Number : ");
+				System.out.print("Enter Passenger Name : ");
+				System.out.print("Enter Seat Number : ");
+
+				System.out.println("\n=========== Reservation Details ===========");
+
+				System.out.println("Flight Number : ");
+				System.out.println("Passenger Name : ");
+				System.out.println("Seat Number : ");
+				System.out.println("Reservation Status : ");
+
+				System.out.println("===========================================");
+				break;
+
+			case 19:
 				System.out.println("Thank You !");
 				return;
 
