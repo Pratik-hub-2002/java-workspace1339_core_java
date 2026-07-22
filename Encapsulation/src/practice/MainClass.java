@@ -353,33 +353,58 @@ public class MainClass {
 				break;
 
 			case 13:
+
 				System.out.println("=========== Library Management ===========");
 
 				System.out.print("Enter Book ID : ");
+				int bid = sc.nextInt();
+
+				sc.nextLine();
+
 				System.out.print("Enter Book Name : ");
+				String bname = sc.nextLine();
+
 				System.out.print("Enter Author Name : ");
+				String bauthor = sc.nextLine();
+
+				Library_Management lm = new Library_Management(bid, bname, bauthor);
+
+				lm.issueBook();
+				lm.returnBook();
 
 				System.out.println("\n=========== Library Details ===========");
 
-				System.out.println("Book ID : ");
-				System.out.println("Book Name : ");
-				System.out.println("Author Name : ");
-				System.out.println("Book Status : ");
+				System.out.println("Book ID : " + lm.getBid());
+				System.out.println("Book Name : " + lm.getBname());
+				System.out.println("Author Name : " + lm.getBauthor());
+				System.out.println("Book Status : " + (lm.getIsIssued() ? "Issued" : "Available"));
 
 				System.out.println("==========================================");
+
 				break;
 
 			case 14:
 				System.out.println("=========== Login System ===========");
 
+				sc.nextLine();
 				System.out.print("Enter Email : ");
+				String lemail = sc.nextLine();
 				System.out.print("Enter Password : ");
+				String lpassword = sc.nextLine();
+
+				Login_System ls = new Login_System(lemail, lpassword);
+
+				boolean status = ls.checkLogin();
 
 				System.out.println("\n=========== Login Details ===========");
 
-				System.out.println("Email : ");
-				System.out.println("Password : ");
-				System.out.println("Login Status : ");
+				System.out.println("Email : " + ls.getEmail());
+				System.out.println("Password : " + ls.getPassword());
+				if (status) {
+					System.out.println("Login Status : Login Successful");
+				} else {
+					System.out.println("Login Status : Login Failed");
+				}
 
 				System.out.println("====================================");
 				break;
@@ -388,11 +413,18 @@ public class MainClass {
 				System.out.println("=========== Amazon Product ===========");
 
 				System.out.print("Enter Product ID : ");
+				int apid = sc.nextInt();
+				sc.nextLine();
 				System.out.print("Enter Product Name : ");
+				String apname = sc.nextLine();
 				System.out.print("Enter Stock Quantity : ");
+				int apquantity = sc.nextInt();
+
 				System.out.print("Enter Price : ");
+				double apprice = sc.nextDouble();
 
 				System.out.print("Enter Quantity to Buy : ");
+				int buyquantity = sc.nextInt();
 
 				System.out.println("\n=========== Product Details ===========");
 
