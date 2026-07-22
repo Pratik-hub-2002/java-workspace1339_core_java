@@ -410,13 +410,17 @@ public class MainClass {
 				break;
 
 			case 15:
+
 				System.out.println("=========== Amazon Product ===========");
 
 				System.out.print("Enter Product ID : ");
 				int apid = sc.nextInt();
+
 				sc.nextLine();
+
 				System.out.print("Enter Product Name : ");
 				String apname = sc.nextLine();
+
 				System.out.print("Enter Stock Quantity : ");
 				int apquantity = sc.nextInt();
 
@@ -426,66 +430,122 @@ public class MainClass {
 				System.out.print("Enter Quantity to Buy : ");
 				int buyquantity = sc.nextInt();
 
+				Amazon_Product ap = new Amazon_Product(apid, apname, apquantity, apprice);
+
+				ap.buyProduct(buyquantity);
+
 				System.out.println("\n=========== Product Details ===========");
 
-				System.out.println("Product ID : ");
-				System.out.println("Product Name : ");
-				System.out.println("Price : ");
-				System.out.println("Available Stock : ");
-				System.out.println("Remaining Stock : ");
+				System.out.println("Product ID : " + ap.getApid());
+				System.out.println("Product Name : " + ap.getApname());
+				System.out.println("Price : Rs. " + ap.getApprice());
+				System.out.println("Purchased Quantity : " + buyquantity);
+				System.out.println("Total Amount : Rs. " + ap.calculateBill(buyquantity));
+				System.out.println("Remaining Stock : " + ap.getApquantity());
 
 				System.out.println("=======================================");
+
 				break;
 
 			case 16:
 				System.out.println("=========== Employee Bonus ===========");
 
 				System.out.print("Enter Employee ID : ");
+				int emid = sc.nextInt();
+				sc.nextLine();
 				System.out.print("Enter Employee Name : ");
+				String emname = sc.nextLine();
 				System.out.print("Enter Salary : ");
+				double emsalary = sc.nextDouble();
 				System.out.print("Enter Bonus Percentage : ");
+				double embounus = sc.nextDouble();
+
+				Employee_Bonus emb = new Employee_Bonus(emid, emname, emsalary, embounus);
 
 				System.out.println("\n=========== Employee Details ===========");
 
-				System.out.println("Employee ID : ");
-				System.out.println("Employee Name : ");
-				System.out.println("Salary : ");
-				System.out.println("Bonus : ");
-				System.out.println("Total Salary : ");
+				System.out.println("Employee ID : " + emb.getEmid());
+				System.out.println("Employee Name : " + emb.getEmname());
+				System.out.println("Salary : " + emb.getEmsalary());
+				System.out.println("Salary : Rs. " + emb.getEmsalary());
+				System.out.println("Bonus Percentage : " + emb.getEmbounus() + "%");
+				System.out.println("Bonus Amount : Rs. " + emb.calculateBonus());
+				System.out.println("Total Salary : Rs. " + emb.totalSalary());
 
 				System.out.println("=======================================");
 				break;
 
 			case 17:
+
 				System.out.println("=========== Hotel Room Booking ===========");
 
 				System.out.print("Enter Room Number : ");
+				int room_no = sc.nextInt();
+
+				sc.nextLine();
+
 				System.out.print("Enter Customer Name : ");
+				String hcname = sc.nextLine();
+
+				Hotel_Room_Booking hrb = new Hotel_Room_Booking(room_no, hcname);
+
+				System.out.println("\n1. Book Room");
+				System.out.println("2. Cancel Room");
+				System.out.print("Enter Your Choice : ");
+				int option = sc.nextInt();
+
+				if (option == 1) {
+					hrb.bookRoom();
+				} else if (option == 2) {
+					hrb.cancelRoom();
+				} else {
+					System.out.println("Invalid Choice.");
+				}
 
 				System.out.println("\n=========== Booking Details ===========");
 
-				System.out.println("Room Number : ");
-				System.out.println("Customer Name : ");
-				System.out.println("Booking Status : ");
+				System.out.println("Room Number : " + hrb.getRoom_no());
+				System.out.println("Customer Name : " + hrb.getHcname());
+				System.out.println("Booking Status : " + (hrb.getBookingStatus() ? "Booked" : "Available"));
 
 				System.out.println("=========================================");
+
 				break;
 
 			case 18:
 				System.out.println("=========== Flight Reservation ===========");
 
 				System.out.print("Enter Flight Number : ");
+				int flight_num = sc.nextInt();
+				sc.nextLine();
 				System.out.print("Enter Passenger Name : ");
+				String fpname = sc.nextLine();
 				System.out.print("Enter Seat Number : ");
+				String fseat_num = sc.nextLine();
+
+				Flight_Reservation fr = new Flight_Reservation(flight_num, fpname, fseat_num);
+				System.out.println("\n1. Reserve Seat");
+				System.out.println("2. Cancel Reservation");
+				System.out.print("Enter Your Choice : ");
+				int foption = sc.nextInt();
+
+				if (foption == 1) {
+					fr.reserveSeat();
+				} else if (foption == 2) {
+					fr.cancelReservation();
+				} else {
+					System.out.println("Invalid Choice.");
+				}
 
 				System.out.println("\n=========== Reservation Details ===========");
 
-				System.out.println("Flight Number : ");
-				System.out.println("Passenger Name : ");
-				System.out.println("Seat Number : ");
-				System.out.println("Reservation Status : ");
+				System.out.println("Flight Number : " + fr.getFlight_num());
+				System.out.println("Passenger Name : " + fr.getFpname());
+				System.out.println("Seat Number : " + fr.getFseat_num());
+				System.out.println("Reservation Status : " + (fr.getReservationStatus() ? "Reserved" : "Available"));
 
 				System.out.println("===========================================");
+
 				break;
 
 			case 19:
