@@ -277,8 +277,9 @@ If you find this repository useful, consider giving it a ⭐.
 
 ### Connect with Me
 
-- GitHub: https://github.com/Pratik-hub-2002
-- Email: praut3022@gmail.com
+- **GitHub:** https://github.com/Pratik-hub-2002
+- **LinkedIn:** https://www.linkedin.com/in/pratik-raut-80b611245
+- **Email:** praut3022@gmail.com
 
 ---
 
