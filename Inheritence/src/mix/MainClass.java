@@ -21,16 +21,12 @@ public class MainClass {
 			System.out.println("8. Reverse Number");
 			System.out.println("9. Loan Eligibility");
 			System.out.println("10. Highest of 4 Numbers");
-			System.out.println("11. Area of Circle");
-			System.out.println("12. Area of Rectangle");
-			System.out.println("13. Area of Triangle");
-			System.out.println("14. Add Two Numbers");
-			System.out.println("15. Add Three Numbers");
-			System.out.println("16. Add Double Numbers");
-			System.out.println("17. Bank Account");
-			System.out.println("18. Student Validation");
-			System.out.println("19. Vehicle & Car");
-			System.out.println("20. Employee & Manager");
+			System.out.println("11. Bank Account");
+			System.out.println("12. Student Validation");
+			System.out.println("13. ");
+			System.out.println("14. ");
+			System.out.println("15. Vehicle & Car");
+			System.out.println("16. Employee & Manager");
 			System.out.println("0. Exit");
 
 			System.out.print("Enter Choice: ");
@@ -274,9 +270,68 @@ public class MainClass {
 				break;
 
 			case 11:
+
+				System.out.println("==============11. Bank Account=========");
+
+				System.out.print("Enter Initial Balance: ₹");
+				double balance = sc.nextDouble();
+
+				Bank_Account ba = new Bank_Account(balance);
+
+				int ops;
+				do {
+
+					System.out.println("1. Deposit");
+					System.out.println("2. Withdraw");
+					System.out.println("3. Check Balance");
+					System.out.println("0. Exit");
+					System.out.println("Select Operation");
+					ops = sc.nextInt();
+
+					switch (ops) {
+
+					case 1:
+						System.out.println("Enter Deposit Amount: ₹");
+						int deposit = sc.nextInt();
+						ba.deposit(deposit);
+						break;
+					case 2:
+						System.out.println("Enter the withdraw amount: ");
+						int withdraw = sc.nextInt();
+						ba.withdraw(withdraw);
+						break;
+					case 3:
+						System.out.println("Current Balance : ₹" + ba.getBalance());
+						break;
+
+					case 0:
+						System.out.println("Returning to Main Menu...");
+
+						break;
+					default:
+						System.out.println("Invalid Choice!");
+						break;
+					}
+				} while (ops != 0);
+
 				break;
 
 			case 12:
+				System.out.println("============12 Student Validation============");
+
+				sc.nextLine();
+				System.out.println("Enter Name: ");
+				String stud_name = sc.nextLine();
+
+				System.out.println("Enter marks: ");
+				int stud_marks = sc.nextInt();
+
+				Student_Validation sv = new Student_Validation(stud_name, stud_marks);
+
+				System.out.println("\n===== Student Details =====");
+				System.out.println("Name: " + sv.getStud_name());
+				System.out.println("Marks: " + sv.getStud_marks());
+
 				break;
 
 			default:
