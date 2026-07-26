@@ -136,6 +136,64 @@ public class MainClass {
 
 				break;
 
+			case 5:
+				System.out.println("===============5. Calculator===========");
+
+				System.out.print("Enter First Number: ");
+				double first = sc.nextDouble();
+
+				Calculator cal = new Calculator(first);
+
+				char cha;
+
+				do {
+					System.out.println("1. Addition(+)");
+					System.out.println("2. Substraction(-)");
+					System.out.println("3. Multiplication(X)");
+					System.out.println("4. Division(/)");
+					int choice_cal = sc.nextInt();
+
+					System.out.print("Enter Number: ");
+					double num = sc.nextDouble();
+
+					switch (choice_cal) {
+
+					case 1:
+						double previous = cal.getResult();
+						double result = cal.add(num);
+						System.out.println(previous + " + " + num + " = " + result);
+						break;
+
+					case 2:
+						previous = cal.getResult();
+						result = cal.sub(num);
+						System.out.println(previous + " - " + num + " = " + result);
+						break;
+
+					case 3:
+						previous = cal.getResult();
+						result = cal.multi(num);
+						System.out.println(previous + " X " + num + " = " + result);
+						break;
+
+					case 4:
+						previous = cal.getResult();
+						result = cal.div(num);
+						System.out.println(previous + " / " + num + " = " + result);
+						break;
+
+					default:
+						System.out.println("Invalid Choice!");
+					}
+
+					System.out.print("Continue Calculator? (y/n): ");
+					cha = sc.next().charAt(0);
+
+				} while (cha == 'y' || cha == 'Y');
+
+				System.out.println("Final Result: " + cal.getResult());
+				break;
+
 			default:
 				System.out.println("Invalid Choice!");
 				break;
