@@ -23,8 +23,8 @@ public class MainClass {
 			System.out.println("10. Highest of 4 Numbers");
 			System.out.println("11. Bank Account");
 			System.out.println("12. Student Validation");
-			System.out.println("13. ");
-			System.out.println("14. ");
+			System.out.println("13. Area");
+			System.out.println("14. Add");
 			System.out.println("15. Vehicle & Car");
 			System.out.println("16. Employee & Manager");
 			System.out.println("0. Exit");
@@ -331,6 +331,166 @@ public class MainClass {
 				System.out.println("\n===== Student Details =====");
 				System.out.println("Name: " + sv.getStud_name());
 				System.out.println("Marks: " + sv.getStud_marks());
+
+				break;
+
+			case 13:
+				System.out.println("==================13. Area=============");
+
+				Area a = new Area();
+
+				int area_ops;
+
+				do {
+					System.out.println("Select Operation");
+					System.out.println("1. Area of Circle");
+					System.out.println("2. Area of Rectangle");
+					System.out.println("3. Area of Triangle");
+					System.out.println("0. Exit");
+					area_ops = sc.nextInt();
+
+					switch (area_ops) {
+
+					case 1:
+						System.out.println("Enter the radius of Circle");
+						double radius = sc.nextDouble();
+						System.out.println("Area of Circle : " + a.calculateArea(radius));
+						break;
+
+					case 2:
+						System.out.println("Enter the lenght: ");
+						int lenght = sc.nextInt();
+						System.out.println("Enter the breadth: ");
+						int breadth = sc.nextInt();
+
+						System.out.println("Area of Rectangle : " + a.calculateArea(lenght, breadth));
+						break;
+
+					case 3:
+						System.out.println("Enter the base: ");
+						double base = sc.nextDouble();
+						System.out.println("Enter the height: ");
+						double height = sc.nextDouble();
+						System.out.println("Area of Triangle : " + a.calculateArea(base, height));
+						break;
+
+					case 0:
+						System.out.println("Returning to Main Menu...");
+						break;
+
+					default:
+						System.out.println("Invalid Input!");
+
+					}
+				} while (area_ops != 0);
+
+				break;
+
+			case 14:
+				System.out.println("===============14. Add================");
+
+				Add ad = new Add();
+				int add_ops;
+
+				do {
+					System.out.println("\nSelect Operation");
+					System.out.println("1. Add Two Integers");
+					System.out.println("2. Add Three Integers");
+					System.out.println("3. Add Two Doubles");
+					System.out.println("0. Exit");
+
+					System.out.print("Enter Choice: ");
+					add_ops = sc.nextInt();
+
+					switch (add_ops) {
+
+					case 1:
+
+						System.out.print("Enter First Number: ");
+						int a1 = sc.nextInt();
+
+						System.out.print("Enter Second Number: ");
+						int b1 = sc.nextInt();
+
+						System.out.println("Result : " + ad.add(a1, b1));
+
+						break;
+
+					case 2:
+
+						System.out.print("Enter First Number: ");
+						int x1 = sc.nextInt();
+
+						System.out.print("Enter Second Number: ");
+						int y1 = sc.nextInt();
+
+						System.out.print("Enter Third Number: ");
+						int z1 = sc.nextInt();
+
+						System.out.println("Result : " + ad.add(x1, y1, z1));
+
+						break;
+
+					case 3:
+
+						System.out.print("Enter First Number: ");
+						double d1 = sc.nextDouble();
+
+						System.out.print("Enter Second Number: ");
+						double d2 = sc.nextDouble();
+
+						System.out.println("Result : " + ad.add(d1, d2));
+
+						break;
+
+					case 0:
+
+						System.out.println("Returning to Main Menu...");
+						break;
+
+					default:
+
+						System.out.println("Invalid Choice!");
+
+					}
+				} while (add_ops != 0);
+
+				break;
+
+			case 15:
+				System.out.println("=============15. Vehicle & Car=============");
+
+				Car c = new Car();
+
+				c.start();
+				c.showSpeed();
+				break;
+
+			case 16:
+				System.out.println("===========16. Employee & Manager===========");
+
+				sc.nextLine();
+
+				System.out.print("Enter Employee Name: ");
+				String empName = sc.nextLine();
+
+				System.out.print("Enter Salary: ");
+				double salary = sc.nextDouble();
+
+				System.out.print("Enter Bonus: ");
+				double bonus = sc.nextDouble();
+
+				Manager m = new Manager();
+
+				m.setName(empName);
+				m.setSalary(salary);
+				m.setBonus(bonus);
+
+				System.out.println("\n===== Employee Details =====");
+				System.out.println("Name : " + m.getName());
+				System.out.println("Salary : ₹" + m.getSalary());
+				System.out.println("Bonus : ₹" + m.getBonus());
+				System.out.println("Total Salary : ₹" + m.calculateTotalSalary());
 
 				break;
 
