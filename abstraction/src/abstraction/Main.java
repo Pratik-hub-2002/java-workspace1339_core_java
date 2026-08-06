@@ -69,7 +69,7 @@ public class Main {
 		Gmail gmail = new Google();
 		gmail.sendMail("abc@gmail.com", "Java Interface");
 
-		GDrive drive = new Google();
+		GDrive drive = new Google(	);
 		drive.uploadFile("Resume.pdf");
 
 		GMap map = new Google();
